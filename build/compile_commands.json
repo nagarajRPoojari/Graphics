@@ -1,0 +1,80 @@
+[
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/gcc  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -o CMakeFiles/GladExample.dir/lib/glad.c.o -c /home/nagaraj/Desktop/experiments/learn-glfw/lib/glad.c",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/lib/glad.c",
+  "output": "CMakeFiles/GladExample.dir/lib/glad.c.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/lib/stb.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/lib/stb.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/lib/stb.cpp",
+  "output": "CMakeFiles/GladExample.dir/lib/stb.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/main.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/main.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/main.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/utils.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/utils.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/utils.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/utils.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/buffers/EBO.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/EBO.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/EBO.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/buffers/EBO.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/buffers/VAO.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VAO.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VAO.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/buffers/VAO.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VBO.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VBO.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/shader.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shader.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shader.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/shader.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/texture.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/texture.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/texture.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/texture.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/shape/shape.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/shape/shape.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/sphere.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/sphere.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/shape/plane.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -g -std=c++14 -o CMakeFiles/GladExample.dir/src/camera.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/camera.cpp.o"
+}
+]
