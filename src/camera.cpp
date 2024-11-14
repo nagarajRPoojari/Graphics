@@ -10,12 +10,15 @@ float yaw=-90.0f;
 float pitch=0.0f;
 
 
-Camera::Camera(GLFWwindow* window){
+Camera::Camera(GLFWwindow* window, bool disableCamera){
+    
     this->window = window;
     this->view= glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -4.0f));
 
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); 
-    glfwSetCursorPosCallback(window, this->mouse_callback);
+    if(!disableCamera){
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); 
+        glfwSetCursorPosCallback(window, this->mouse_callback);
+    }
 };
 
 void Camera::mouse_callback(GLFWwindow *window,double xpos, double ypos){

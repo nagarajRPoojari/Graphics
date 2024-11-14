@@ -11,9 +11,12 @@ find_package(yaml-cpp REQUIRED)
 
 # Include directories
 include_directories(include)
+include_directories(imgui/backends)
 
 # Optionally add the include directories for other libraries
 include_directories(/usr/include/) 
+set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/imgui")
+include_directories(${IMGUI_DIR})
 
 # Specify the source files
 set(SOURCES 
@@ -30,6 +33,14 @@ set(SOURCES
     src/shape/sphere.cpp 
     src/shape/plane.cpp 
     src/camera.cpp
+    src/gui/gui.cpp
+    ${IMGUI_DIR}/imgui.cpp
+    ${IMGUI_DIR}/imgui_draw.cpp
+    ${IMGUI_DIR}/imgui_widgets.cpp
+    ${IMGUI_DIR}/imgui_demo.cpp
+    ${IMGUI_DIR}/imgui_tables.cpp 
+    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
 )
 
 # Create the executable

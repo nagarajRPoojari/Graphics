@@ -22,6 +22,15 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui.h \
+ /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/strings.h /usr/include/assert.h \
+ /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_glfw.h \
+ /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_opengl3.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -32,14 +41,11 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /usr/include/c++/13/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/c++/13/exception /usr/include/c++/13/bits/exception.h \
  /usr/include/c++/13/bits/exception_ptr.h \
  /usr/include/c++/13/bits/exception_defines.h \
@@ -234,8 +240,8 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /usr/include/yaml-cpp/node/parse.h /usr/include/yaml-cpp/node/emit.h \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/glm/detail/setup.hpp /usr/include/c++/13/cassert \
- /usr/include/assert.h /usr/include/glm/simd/platform.h \
- /usr/include/c++/13/cstdint /usr/include/c++/13/climits \
+ /usr/include/glm/simd/platform.h /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -244,7 +250,6 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/13/cfloat \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
  /usr/include/glm/fwd.hpp /usr/include/glm/detail/qualifier.hpp \
  /usr/include/glm/detail/setup.hpp /usr/include/glm/vec2.hpp \
  /usr/include/glm/ext/vector_bool2.hpp \
@@ -400,7 +405,6 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /usr/include/glm/ext/vector_int1_sized.hpp \
  /usr/include/glm/ext/vector_uint1.hpp \
  /usr/include/glm/ext/vector_uint1_sized.hpp /usr/include/c++/13/cstring \
- /usr/include/string.h /usr/include/strings.h \
  /usr/include/glm/gtc/type_ptr.inl \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/stb/stb_image.h \
  /usr/include/c++/13/stdlib.h \
@@ -416,4 +420,5 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/shape.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/camera/camera.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/sphere.hpp \
- /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/plane.hpp
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/plane.hpp \
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/gui/gui.hpp

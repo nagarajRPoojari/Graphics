@@ -11,8 +11,8 @@ class Camera{
     public:
         GLFWwindow* window;
         glm::mat4 view;
-
-        Camera(GLFWwindow *window);
+        bool disableCamera;
+        Camera(GLFWwindow *window, bool disableCamera);
 
         static void mouse_callback(GLFWwindow *window,double xpos, double ypos);
         int processFrame();
