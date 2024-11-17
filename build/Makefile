@@ -489,6 +489,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/screen.o: src/screen.cpp.o
+.PHONY : src/screen.o
+
+# target to build an object file
+src/screen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/screen.cpp.o
+.PHONY : src/screen.cpp.o
+
+src/screen.i: src/screen.cpp.i
+.PHONY : src/screen.i
+
+# target to preprocess a source file
+src/screen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/screen.cpp.i
+.PHONY : src/screen.cpp.i
+
+src/screen.s: src/screen.cpp.s
+.PHONY : src/screen.s
+
+# target to generate assembly for a file
+src/screen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/screen.cpp.s
+.PHONY : src/screen.cpp.s
+
 src/shader.o: src/shader.cpp.o
 .PHONY : src/shader.o
 
@@ -512,30 +536,6 @@ src/shader.s: src/shader.cpp.s
 src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
-
-src/shape/plane.o: src/shape/plane.cpp.o
-.PHONY : src/shape/plane.o
-
-# target to build an object file
-src/shape/plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.o
-.PHONY : src/shape/plane.cpp.o
-
-src/shape/plane.i: src/shape/plane.cpp.i
-.PHONY : src/shape/plane.i
-
-# target to preprocess a source file
-src/shape/plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.i
-.PHONY : src/shape/plane.cpp.i
-
-src/shape/plane.s: src/shape/plane.cpp.s
-.PHONY : src/shape/plane.s
-
-# target to generate assembly for a file
-src/shape/plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.s
-.PHONY : src/shape/plane.cpp.s
 
 src/shape/shape.o: src/shape/shape.cpp.o
 .PHONY : src/shape/shape.o
@@ -687,12 +687,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/screen.o"
+	@echo "... src/screen.i"
+	@echo "... src/screen.s"
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
-	@echo "... src/shape/plane.o"
-	@echo "... src/shape/plane.i"
-	@echo "... src/shape/plane.s"
 	@echo "... src/shape/shape.o"
 	@echo "... src/shape/shape.i"
 	@echo "... src/shape/shape.s"

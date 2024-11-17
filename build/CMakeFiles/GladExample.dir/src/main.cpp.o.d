@@ -420,5 +420,5 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/shape.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/camera/camera.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/sphere.hpp \
- /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/plane.hpp \
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/screen/screen.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/gui/gui.hpp

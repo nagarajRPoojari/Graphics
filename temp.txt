@@ -1,0 +1,164 @@
+#include "stb/stb_image.h"
+
+#include <iostream>
+#include <vector>
+
+#include <glad/glad.h> // Use GLAD for OpenGL function loading
+#include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <utils/utils.hpp>
+
+// Window dimensions
+const unsigned int WIDTH = 800, HEIGHT = 600;
+
+// Vertex Shader Source
+const char* vertexShaderSource = load_file("/home/nagaraj/Desktop/experiments/learn-glfw/assets/vertex.glsl");
+
+// Fragment Shader Source
+const char* fragmentShaderSource = load_file("/home/nagaraj/Desktop/experiments/learn-glfw/assets/fragment.glsl");
+
+
+
+GLuint createShader(GLenum type, const char* source) {
+    GLuint shader = glCreateShader(type);
+    glShaderSource(shader, 1, &source, nullptr);
+    glCompileShader(shader);
+
+    int success;
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        char infoLog[512];
+        glGetShaderInfoLog(shader, 512, nullptr, infoLog);
+        std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
+    }
+    return shader;
+}
+
+GLuint createShaderProgram() {
+    GLuint vertexShader = createShader(GL_VERTEX_SHADER, vertexShaderSource);
+    GLuint fragmentShader = createShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
+    
+    GLuint shaderProgram = glCreateProgram();
+    glAttachShader(shaderProgram, vertexShader);
+    glAttachShader(shaderProgram, fragmentShader);
+    glLinkProgram(shaderProgram);
+    
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+    
+    return shaderProgram;
+}
+
+
+int main() {
+    // Initialize GLFW
+
+    if (!glfwInit()) {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
+        return -1;
+    }
+    
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Ray Tracing", nullptr, nullptr);
+    if (!window) {
+        std::cerr << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    
+    glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    
+    // Load OpenGL functions with GLAD
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cerr << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+    
+    GLuint shaderProgram = createShaderProgram();
+    
+    // Vertex data for a fullscreen quad
+    float vertices[] = {
+        // positions     // texture coords
+        -1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
+         1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+         1.0f,  1.0f, 0.0f, 1.0f, 1.0f,
+        -1.0f,  1.0f, 0.0f, 0.0f, 1.0f
+    };
+    
+    unsigned int indices[] = {
+        0, 1, 2,
+        0, 2, 3
+    };
+    
+    GLuint VAO, VBO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
+    
+    glBindVertexArray(VAO);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+    // Position
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    
+    // Texture coord
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, 0); 
+    glBindVertexArray(0); 
+    
+    // Load textures
+    unsigned int texture0, texture1;
+    glGenTextures(1, &texture0);
+    glBindTexture(GL_TEXTURE_2D, texture0);
+    // Load texture data into texture0 using stb_image
+
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    // Load texture data into texture1 using stb_image
+    
+    glUseProgram(shaderProgram);
+    glUniform1i(glGetUniformLocation(shaderProgram, "iChannel0"), 0);
+    glUniform1i(glGetUniformLocation(shaderProgram, "iChannel1"), 1);
+    
+    // Game loop
+    while (!glfwWindowShouldClose(window)) {
+        float timeValue = glfwGetTime();
+        glUniform1f(glGetUniformLocation(shaderProgram, "iTime"), timeValue);
+        glUniform3f(glGetUniformLocation(shaderProgram, "iResolution"), (float)WIDTH, (float)HEIGHT, 0.0f);
+        
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture0);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    
+    // Cleanup
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+    glDeleteProgram(shaderProgram);
+    
+    glfwTerminate();
+    return 0;
+}

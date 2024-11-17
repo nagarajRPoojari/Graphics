@@ -7,7 +7,7 @@
 #include <yaml-cpp/yaml.h>
 #include <tuple>
 
-std::string load_file(const char* filename);
+const char* load_file(const char* filename);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 GLFWwindow* initWindow();
 
@@ -23,7 +23,7 @@ namespace SphereUtils{
     void generateBufferData(int lats, int longs, std::vector<GLfloat>& vertex_b, std::vector<GLuint>& index_b);
 }
 
-namespace PlaneUtils{ 
+namespace ScreenUtils{ 
     void generateBufferData(std::vector<GLfloat>& vertex_b, std::vector<GLuint>& index_b);
 }
 

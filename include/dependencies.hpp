@@ -23,5 +23,5 @@
 #include <camera/camera.hpp>
 #include <vector>
 #include <shape/sphere.hpp>
-#include <shape/plane.hpp>
+#include <screen/screen.hpp>
 #include <gui/gui.hpp>

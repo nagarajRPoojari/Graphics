@@ -20,9 +20,6 @@ class Shape{
         Shape* tarnslate(glm::vec3 position);     
         Shape* scale(glm::vec3 factors);  
         glm::vec4 getPosition();
-
-        virtual void initBuffers() = 0;
-        virtual void draw(Shader sh) = 0;
         
 };
 

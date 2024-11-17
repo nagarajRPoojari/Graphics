@@ -223,19 +223,19 @@ CMakeFiles/GladExample.dir/src/shape/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GladExample.dir/src/shape/sphere.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/sphere.cpp -o CMakeFiles/GladExample.dir/src/shape/sphere.cpp.s
 
-CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: CMakeFiles/GladExample.dir/flags.make
-CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp
-CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GladExample.dir/src/shape/plane.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/plane.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp
+CMakeFiles/GladExample.dir/src/screen.cpp.o: CMakeFiles/GladExample.dir/flags.make
+CMakeFiles/GladExample.dir/src/screen.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp
+CMakeFiles/GladExample.dir/src/screen.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GladExample.dir/src/screen.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/screen.cpp.o -MF CMakeFiles/GladExample.dir/src/screen.cpp.o.d -o CMakeFiles/GladExample.dir/src/screen.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp
 
-CMakeFiles/GladExample.dir/src/shape/plane.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GladExample.dir/src/shape/plane.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp > CMakeFiles/GladExample.dir/src/shape/plane.cpp.i
+CMakeFiles/GladExample.dir/src/screen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GladExample.dir/src/screen.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp > CMakeFiles/GladExample.dir/src/screen.cpp.i
 
-CMakeFiles/GladExample.dir/src/shape/plane.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GladExample.dir/src/shape/plane.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp -o CMakeFiles/GladExample.dir/src/shape/plane.cpp.s
+CMakeFiles/GladExample.dir/src/screen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GladExample.dir/src/screen.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp -o CMakeFiles/GladExample.dir/src/screen.cpp.s
 
 CMakeFiles/GladExample.dir/src/camera.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/camera.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp
@@ -376,7 +376,7 @@ GladExample_OBJECTS = \
 "CMakeFiles/GladExample.dir/src/texture.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shape/shape.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o" \
-"CMakeFiles/GladExample.dir/src/shape/plane.cpp.o" \
+"CMakeFiles/GladExample.dir/src/screen.cpp.o" \
 "CMakeFiles/GladExample.dir/src/camera.cpp.o" \
 "CMakeFiles/GladExample.dir/src/gui/gui.cpp.o" \
 "CMakeFiles/GladExample.dir/imgui/imgui.cpp.o" \
@@ -401,7 +401,7 @@ GladExample: CMakeFiles/GladExample.dir/src/shader.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/texture.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shape/shape.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o
-GladExample: CMakeFiles/GladExample.dir/src/shape/plane.cpp.o
+GladExample: CMakeFiles/GladExample.dir/src/screen.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/camera.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/gui/gui.cpp.o
 GladExample: CMakeFiles/GladExample.dir/imgui/imgui.cpp.o

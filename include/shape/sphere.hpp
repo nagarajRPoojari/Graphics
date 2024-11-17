@@ -18,18 +18,9 @@ class Sphere : public Shape{
         static bool instantiated;
 
     public:
-
-        static std::vector<GLfloat> vertices;
-        static std::vector<GLuint> indices;
-        static std::unique_ptr<EBO> ebo;
-        static std::unique_ptr<VBO> vbo;
-        static std::unique_ptr<VAO> vao;
-
         float radius;
 
         Sphere(float radius, glm::vec3 objectColor);
-        void initBuffers() override;
-        void draw(Shader sh) override;
 };
 
 #endif
