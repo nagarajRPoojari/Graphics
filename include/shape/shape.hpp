@@ -9,18 +9,16 @@
 #include <buffers/EBO.hpp>
 #include <shader/shader.hpp>
 
+
+
 class Shape{
     public:
-        glm::vec3 objectColor;
         glm::mat4 model;
-
         Shape();
 
         Shape* rotate(float angle, glm::vec3 axis);
         Shape* tarnslate(glm::vec3 position);     
         Shape* scale(glm::vec3 factors);  
-        glm::vec4 getPosition();
-        
+        glm::vec4 getPosition();        
 };
-
 #endif

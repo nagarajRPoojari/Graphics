@@ -31,6 +31,9 @@ set(SOURCES
     src/texture.cpp 
     src/shape/shape.cpp 
     src/shape/sphere.cpp 
+    src/shape/material.cpp
+    src/shape/light.cpp
+    src/shape/plane.cpp
     src/screen.cpp
     src/camera.cpp
     src/gui/gui.cpp

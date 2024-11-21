@@ -1,3 +1,4 @@
+#include <shape/plane.hpp>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <imgui.h>
@@ -12,6 +13,7 @@
 #include <buffers/EBO.hpp>
 #include <buffers/VAO.hpp>
 #include <buffers/VBO.hpp>
+#include <buffers/SSBO.hpp>
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
 #include <fstream>
@@ -25,3 +27,4 @@
 #include <shape/sphere.hpp>
 #include <screen/screen.hpp>
 #include <gui/gui.hpp>
+#include <shape/light.hpp>

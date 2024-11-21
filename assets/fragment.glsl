@@ -1,4 +1,4 @@
-#version 330 core
+#version 430 core
 
 out vec4 fragColor;
 in vec2 TexCoords;
@@ -9,15 +9,10 @@ uniform float iTime;
 uniform sampler2D iChannel0; // Texture for background
 uniform sampler2D iChannel1; // Texture for ground
 
-// ===================== ShaderToy Raytracing Code =====================
-// Hey!
-// This is my implementation of raytracing including
-// different reflections and refractions techniques 
-// along with phong lighting model and shadows
-// There are still some bugs I think :o but 
-// I'll come to them a bit later!
-// Enjoy :)
-
+uniform vec3 cameraPosition;
+uniform vec3 cameraViewDir;
+uniform vec3 cameraRight;
+uniform vec3 cameraUp;
 
 #define PI 3.1415926535
 #define SHADOWS
@@ -31,7 +26,9 @@ float ambientStrength = 0.1;
 const int R = 3;    // Num reflections
 const float delta = 10e-5;
 float shadowFactor = 0.1;
-const int N = 6;    // Num spheres
+const int N = 2; 
+const int LIGHT_COUNT = 1;   // Num spheres
+const int PLANE_COUNT = 1;   // Num spheres
 bool transform = true;
 bool deg = false;
 float fov = 0.8;   // 0 < fov
@@ -49,9 +46,9 @@ struct Material{
 };
 
 struct Sphere{
-    float radius;
-    vec3 center;
     Material mat;
+    vec3 center;
+    float radius;
 };
 
 struct Plane{
@@ -63,9 +60,9 @@ struct Plane{
 
 struct Light{
     vec3 dir;
-    float mag;
     vec4 color;
     vec3 ray;
+    float mag;
 };
 
 struct Ray{
@@ -80,6 +77,12 @@ struct Hit{
     vec3 point;
     vec3 normal;
 };
+
+uniform Sphere u_spheres[N];
+uniform Light u_lights[LIGHT_COUNT];
+uniform Plane u_planes[PLANE_COUNT];
+
+
 
 mat3 Rotation(vec3 euler, bool deg){
 
@@ -120,9 +123,9 @@ mat3 Rotation(vec3 euler, bool deg){
 // Global variables
 Ray[totalRays+1] reflectionRays;
 Ray[totalRays+1] refractionRays;
-Light light;
+Sphere spheres[N];
 Plane ground;
-Sphere[N] spheres;
+Light light;
 
 
 // Raycasting Functions definition
@@ -219,7 +222,8 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
         hit = hitGround;
         // sample ground texture
         vec2 groundTexScale = vec2(0.5);
-        ground.mat.color = texture(iChannel1, hitGround.point.xz*groundTexScale);
+        //ground.mat.color = texture(iChannel1, hitGround.point.xz*groundTexScale);
+        //ground.mat.color = ground.mat;
         hitMat = ground.mat;
         col = GetLighting(ground.mat, hitGround.normal, ray.dir, light);
     }
@@ -236,7 +240,8 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
     // If no object hit then exit
     if (hit.d == FLOAT_MAX){
         //col = texture(iChannel0, reflect(ray.dir, hit.normal));
-        col = vec4(0.7f,0.3f,0.2f,1.0f);
+        col = vec4(0.1f);
+        //col = vec4(spheres[0].radius, spheres[0].radius, spheres[0].radius, 1.0f);
         return col;
     }
 
@@ -385,80 +390,25 @@ vec4 CastRays(in int iter){
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {       
     // Camera
-    vec3 cameraPos = vec3(0,0,-fov);
+    vec3 cameraPos = cameraPosition;
     Ray ray;
     ray.origin = cameraPos;
     
     // Camera motion
-    vec3 camOffset = vec3(0, 2, 5);
-    float camAngle = iTime * 0.6;
-    float camRadius = 6.0;
+    //vec3 camOffset = vec3(0, 2, 5);
+    //float camAngle = iTime * 0.6;
+    //float camRadius = 6.0;
     
-    // Light
-    light.dir = vec3(sin(iTime*0.7), -1, cos(iTime*0.7));
-    //light.dir = vec3(-0.4, -1.0, -1);
-    //light.dir = vec3(0.6, -0.5, 1);
-    light.mag = 1.0;
-    light.color = vec4(1,1,1,1);
-    
-    // Ground plane
-    ground.center = vec3(camOffset.x,0,camOffset.z);
-    ground.size = vec3(5,0,5);
-    ground.normal = vec3(0,1,0);
-    ground.mat = Material(vec4(0.3,0.8,0.2,1.0), 1.0, 16.0, 0.2, 0.0, 1.0);
-    
-    // Ground plane
-    spheres[0].radius = 0.8;
-    spheres[0].center = vec3(0.0,0.8,2);
-    spheres[0].mat = Material(vec4(0,0,0,0.0), 1.0, 32.0, 0.1, 1.0, 1.25);
-
-    spheres[1].radius = 1.1;
-    spheres[1].center = vec3(1.0,1.1,6);
-    spheres[1].mat = Material(vec4(0.3,0.3,1.0,1.0), 1.0, 16.0, 0.1, 0.0, 2.0);
-    
-    spheres[2].radius = 0.5;
-    spheres[2].center = vec3(-2.0,0.5,3.0);
-    spheres[2].mat = Material(vec4(0.8,0.8,0.1,1.0), 1.0, 32.0, 1.0, 0.0, 2.0);
-    
-    spheres[3].radius = 0.5;
-    spheres[3].center = vec3(1.5,0.8,3);
-    spheres[3].mat = Material(vec4(0.0,1.0,1.0,1.0), 1.0, 0.0001, 0.0, 0.0, 2.0);
-
-    spheres[4].radius = 1.0;
-    spheres[4].center = vec3(-0.8,1,4);
-    spheres[4].mat = Material(vec4(1.0,0.1,0.1,1.0), 1.0, 16.0, 0.5, 0.0, 2.0);
-    
-    spheres[5].radius = 1.0;
-    spheres[5].center = vec3(-2.0,1.0,7);
-    spheres[5].mat = Material(vec4(0,0,0,0.0), 1.0, 32.0, 0.1, 1.0, 1.5);
-    
-    //------------------------------------------------------------//
-    
-    // CALCULATIONS BEGIN
-    light.dir = normalize(light.dir);
-    light.ray = light.dir * light.mag;
     
     // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = (fragCoord-0.5*iResolution.xy)/iResolution.y;
     
     // View ray
-    ray.dir = normalize(vec3(cameraPos.x+uv.x, cameraPos.y+uv.y, 0) - cameraPos);
+    ray.dir= normalize(cameraViewDir + cameraRight * uv.x + cameraUp * uv.y);
     ray.factor = 1.0;
     ray.n = 1.0;    // Starts in air
 
-    // Translate & Rotate camera
-    camAngle = mod(camAngle, 2.0*PI);
-    vec3 rotate = vec3(-0.2, camAngle, 0);
-    vec3 translate = camOffset + vec3(camRadius*sin(camAngle), 0, -camRadius*cos(camAngle));
-    if (!transform){
-        rotate = vec3(0, 0, 0);
-        translate = vec3(0,1,-1);
-    }
-    mat3 Rxyz = Rotation(rotate, deg);
-    ray.dir = Rxyz * ray.dir;
-    ray.origin = translate;
-    
-    // Start recurive raytracing
+
     for (int i=0; i<totalRays+1; i++){
         reflectionRays[i] = Ray(vec3(0), vec3(0), 0.0, 0.0);
         refractionRays[i] = Ray(vec3(0), vec3(0), 0.0, 0.0);
@@ -473,5 +423,13 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 
 void main() {
+    ground = u_planes[0];
+    light = u_lights[0];
+    spheres = u_spheres;
+    //light.dir = vec3(sin(iTime*0.7), -1, cos(iTime*0.7));
+    light.dir = vec3(-0.4, -1.0, -1);
+    //light.dir = vec3(0.6, -0.5, 1);
+    light.mag = 0.4;
+    light.color = vec4(1,1,1,1);
     mainImage(fragColor, TexCoords * iResolution.xy);
 }

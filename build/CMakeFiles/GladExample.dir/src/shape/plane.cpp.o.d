@@ -337,10 +337,14 @@ CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/material.hpp \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/utils/utils.hpp \
  /usr/include/yaml-cpp/yaml.h /usr/include/yaml-cpp/parser.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
- /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h \
  /usr/include/c++/13/bits/uses_allocator.h \
@@ -356,11 +360,8 @@ CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: \
  /usr/include/c++/13/backward/auto_ptr.h /usr/include/yaml-cpp/dll.h \
  /usr/include/yaml-cpp/emitter.h /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/yaml-cpp/binary.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc /usr/include/yaml-cpp/emitterdef.h \
- /usr/include/yaml-cpp/emittermanip.h /usr/include/yaml-cpp/null.h \
- /usr/include/yaml-cpp/ostream_wrapper.h \
+ /usr/include/yaml-cpp/emitterdef.h /usr/include/yaml-cpp/emittermanip.h \
+ /usr/include/yaml-cpp/null.h /usr/include/yaml-cpp/ostream_wrapper.h \
  /usr/include/yaml-cpp/emitterstyle.h /usr/include/yaml-cpp/stlemitter.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/set \

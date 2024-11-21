@@ -9,37 +9,36 @@
 #include <tuple>
 #include <iostream>
 #include <utils/utils.hpp>
-#include <memory>
 
-bool Plane::instantiated = false;
-std::unique_ptr<VAO> Plane::vao = nullptr;
-std::unique_ptr<EBO> Plane::ebo = nullptr;
-std::unique_ptr<VBO> Plane::vbo = nullptr;
-std::vector<GLfloat> Plane::vertices; 
-std::vector<GLuint> Plane::indices;
+int Plane::BUFFER_INDEX = 0;
 
-
-Plane::Plane(glm::vec3 objectColor){
-    this->objectColor = objectColor;
-    initBuffers();   
+Plane::Plane(
+    glm::vec3 size, 
+    glm::vec3 normal, 
+    glm::vec4 color, 
+    float df, float sf, float kr, float kt, float n
+){
+    this->buffer_index = BUFFER_INDEX;
+    BUFFER_INDEX++;
+    this-> size = size;
+    this-> normal = normal;
+    this-> material = Material(color,df,sf,kr,kt,n);
+}
+    
+void Plane::updateBuffer(Shader sh){
+    glm::vec3 center = this->getPosition();
+    sh.setUniform3f(this->format("center"),center[0], center[1], center[2]);
+    sh.setUniform3f(this->format("size"),size[0], size[1], size[2]);
+    sh.setUniform3f(this->format("normal"),normal[0], normal[1], normal[2]);
+    sh.setUniform4f(this->format("mat.color"),material.color[0], material.color[1], material.color[2], material.color[3]);
+    sh.setUniform1f(this->format("mat.kd"), material.diffuse_factor);
+    sh.setUniform1f(this->format("mat.ks"), material.specular_factor);
+    sh.setUniform1f(this->format("mat.kr"), material.reflectivity);
+    sh.setUniform1f(this->format("mat.kt"), material.transmitivity);
+    sh.setUniform1f(this->format("mat.n"), material.n);
 }
 
-void Plane::draw(Shader sh){
-    sh.setUniformMatrix("model", this->model);
-    Plane::vao->bind();
-    glDrawElements(GL_TRIANGLES, this->indices.size(), GL_UNSIGNED_INT, 0);
-    Plane::vao->unbind();
+std::string Plane::format(std::string field){
+    std::string i_str = std::to_string(this->buffer_index);
+    return std::string("u_planes[").append(i_str).append("].").append(field);
 }
-
-
-void Plane::initBuffers() {
-    if(!Plane::instantiated){
-        instantiated = true;
-        Plane::vao = std::make_unique<VAO>();
-        PlaneUtils::generateBufferData(Plane::vertices, Plane::indices);
-        Plane::vbo = std::make_unique<VBO>(Plane::vertices.data(), Plane::vertices.size()*sizeof(GLfloat));
-        Plane::ebo = std::make_unique<EBO>(Plane::indices.data(), Plane::indices.size()*sizeof(GLuint));
-        Plane::vao->setAttribute(0,3,3,0);
-    }
-}
-

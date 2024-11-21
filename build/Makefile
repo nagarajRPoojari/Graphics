@@ -537,6 +537,78 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
+src/shape/light.o: src/shape/light.cpp.o
+.PHONY : src/shape/light.o
+
+# target to build an object file
+src/shape/light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/light.cpp.o
+.PHONY : src/shape/light.cpp.o
+
+src/shape/light.i: src/shape/light.cpp.i
+.PHONY : src/shape/light.i
+
+# target to preprocess a source file
+src/shape/light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/light.cpp.i
+.PHONY : src/shape/light.cpp.i
+
+src/shape/light.s: src/shape/light.cpp.s
+.PHONY : src/shape/light.s
+
+# target to generate assembly for a file
+src/shape/light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/light.cpp.s
+.PHONY : src/shape/light.cpp.s
+
+src/shape/material.o: src/shape/material.cpp.o
+.PHONY : src/shape/material.o
+
+# target to build an object file
+src/shape/material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/material.cpp.o
+.PHONY : src/shape/material.cpp.o
+
+src/shape/material.i: src/shape/material.cpp.i
+.PHONY : src/shape/material.i
+
+# target to preprocess a source file
+src/shape/material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/material.cpp.i
+.PHONY : src/shape/material.cpp.i
+
+src/shape/material.s: src/shape/material.cpp.s
+.PHONY : src/shape/material.s
+
+# target to generate assembly for a file
+src/shape/material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/material.cpp.s
+.PHONY : src/shape/material.cpp.s
+
+src/shape/plane.o: src/shape/plane.cpp.o
+.PHONY : src/shape/plane.o
+
+# target to build an object file
+src/shape/plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.o
+.PHONY : src/shape/plane.cpp.o
+
+src/shape/plane.i: src/shape/plane.cpp.i
+.PHONY : src/shape/plane.i
+
+# target to preprocess a source file
+src/shape/plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.i
+.PHONY : src/shape/plane.cpp.i
+
+src/shape/plane.s: src/shape/plane.cpp.s
+.PHONY : src/shape/plane.s
+
+# target to generate assembly for a file
+src/shape/plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/plane.cpp.s
+.PHONY : src/shape/plane.cpp.s
+
 src/shape/shape.o: src/shape/shape.cpp.o
 .PHONY : src/shape/shape.o
 
@@ -693,6 +765,15 @@ help:
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
+	@echo "... src/shape/light.o"
+	@echo "... src/shape/light.i"
+	@echo "... src/shape/light.s"
+	@echo "... src/shape/material.o"
+	@echo "... src/shape/material.i"
+	@echo "... src/shape/material.s"
+	@echo "... src/shape/plane.o"
+	@echo "... src/shape/plane.i"
+	@echo "... src/shape/plane.s"
 	@echo "... src/shape/shape.o"
 	@echo "... src/shape/shape.i"
 	@echo "... src/shape/shape.s"
