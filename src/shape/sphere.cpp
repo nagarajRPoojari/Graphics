@@ -12,17 +12,17 @@
 
 int Sphere::BUFFER_INDEX = 0;
 
-Sphere::Sphere(float radius, glm::vec4 color, float df, float sf, float kr, float kt, float n){
+Sphere::Sphere(glm::vec4 color, float df, float sf, float kr, float kt, float n){
     this->buffer_index = BUFFER_INDEX;
     BUFFER_INDEX++;
+    this->radius = 1.0;
     this->material = Material(color, df, sf, kr, kt, n);
-    this->radius = radius;
 }
     
 void Sphere::updateBuffer(Shader sh){
     glm::vec3 center = this->getPosition();
     sh.setUniform3f(this->format("center"),center[0], center[1], center[2]);
-    sh.setUniform1f(this->format("radius"),radius);
+    sh.setUniform1f(this->format("radius"),this->radius);
     sh.setUniform4f(this->format("mat.color"),material.color[0], material.color[1], material.color[2], material.color[3]);
     sh.setUniform1f(this->format("mat.kd"), material.diffuse_factor);
     sh.setUniform1f(this->format("mat.ks"), material.specular_factor);
@@ -34,4 +34,8 @@ void Sphere::updateBuffer(Shader sh){
 std::string Sphere::format(std::string field){
     std::string i_str = std::to_string(this->buffer_index);
     return std::string("u_spheres[").append(i_str).append("].").append(field);
+}
+
+void Sphere::scale(float factor){
+    radius*=factor;
 }

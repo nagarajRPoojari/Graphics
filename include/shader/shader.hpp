@@ -8,7 +8,7 @@
 class Shader{
     public:
         GLuint ID;
-        Shader(const char* vertexFilename, const char* fragmentFilename);
+        Shader();
         void activate();
         void deactivate();
 

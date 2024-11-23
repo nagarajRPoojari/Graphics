@@ -24,7 +24,6 @@ class Plane : public Shape{
         glm::vec3 normal;
         Material material;
         Plane(
-            glm::vec3 size, 
             glm::vec3 normal, 
             glm::vec4 color, 
             float df, 
@@ -35,6 +34,7 @@ class Plane : public Shape{
         );
         void updateBuffer(Shader sh);
         std::string format(std::string field);
+        glm::vec3 getSize();
 };
 
 #endif

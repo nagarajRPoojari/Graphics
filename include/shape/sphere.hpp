@@ -18,12 +18,12 @@ class Sphere : public Shape{
     public:
         static int BUFFER_INDEX;
         int buffer_index;
-        
         float radius;
         Material material;
-        Sphere(float radius, glm::vec4 color, float df, float sf, float kr, float kt, float n);
+        Sphere(glm::vec4 color, float df, float sf, float kr, float kt, float n);
         void updateBuffer(Shader sh);
         std::string format(std::string field);
+        void scale(float radius);
 };
 
 #endif

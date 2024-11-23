@@ -11,7 +11,6 @@ uniform sampler2D iChannel1; // Texture for ground
 
 uniform vec3 cameraPosition;
 uniform vec3 cameraViewDir;
-uniform vec3 cameraRight;
 uniform vec3 cameraUp;
 
 #define PI 3.1415926535
@@ -389,24 +388,16 @@ vec4 CastRays(in int iter){
 //--------- Main Function ---------
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {       
-    // Camera
     vec3 cameraPos = cameraPosition;
     Ray ray;
     ray.origin = cameraPos;
     
-    // Camera motion
-    //vec3 camOffset = vec3(0, 2, 5);
-    //float camAngle = iTime * 0.6;
-    //float camRadius = 6.0;
     
-    
-    // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = (fragCoord-0.5*iResolution.xy)/iResolution.y;
-    
-    // View ray
-    ray.dir= normalize(cameraViewDir + cameraRight * uv.x + cameraUp * uv.y);
+    vec3 camR = cross(cameraViewDir, cameraUp);
+    ray.dir= normalize(cameraViewDir + camR * uv.x + cameraUp * uv.y);
     ray.factor = 1.0;
-    ray.n = 1.0;    // Starts in air
+    ray.n = 1.0;   
 
 
     for (int i=0; i<totalRays+1; i++){

@@ -49,7 +49,11 @@ void Camera::mouse_callback(GLFWwindow *window,double xpos, double ypos){
     direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
     direction.y = sin(glm::radians(pitch));
     direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraFront = glm::normalize(direction);
+    
+    direction = glm::normalize(direction);
+    glm::vec3 cameraRight(-direction.z,0.0,direction.x);
+    cameraUp = glm::cross(cameraRight, direction);
+    cameraFront = direction;
 }
 
 int Camera::processFrame(){

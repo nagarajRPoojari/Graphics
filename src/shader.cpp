@@ -8,7 +8,9 @@
 #include <shader/shader.hpp>
 #include <utils/utils.hpp>
 
-Shader::Shader(const char* vertexFilename, const char* fragmentFilename){
+Shader::Shader(){
+    const char* vertexFilename = "../assets/vertex.glsl";
+    const char* fragmentFilename = "../assets/fragment.glsl";
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     std::string vertexShaderSrc = load_file("../assets/vertex.glsl");
     const GLchar * vertexSrc = vertexShaderSrc.c_str();

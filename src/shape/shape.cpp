@@ -22,6 +22,6 @@ Shape* Shape::scale(glm::vec3 factors){
     return this;
 }
 
-glm::vec4 Shape::getPosition(){
-    return this->model[3];
+glm::vec3 Shape::getPosition(){
+    return glm::vec3(model[3][0], model[3][1], model[3][2]);
 }

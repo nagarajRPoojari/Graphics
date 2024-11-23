@@ -19,6 +19,6 @@ class Shape{
         Shape* rotate(float angle, glm::vec3 axis);
         Shape* tarnslate(glm::vec3 position);     
         Shape* scale(glm::vec3 factors);  
-        glm::vec4 getPosition();        
+        glm::vec3 getPosition();        
 };
 #endif
