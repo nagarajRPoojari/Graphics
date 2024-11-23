@@ -10,7 +10,7 @@ int main() {
     Screen back;
 
 
-
+    
     Shader sh;
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), 
                                             (float)Config::WINDOW_WIDTH / (float)Config::WINDOW_HEIGHT, 0.1f, 100.0f);

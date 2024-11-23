@@ -11,6 +11,7 @@ class Shader{
         Shader();
         void activate();
         void deactivate();
+        std::string load_shader(const std::string& dir_path);
 
         template <typename T>
         void setUniformMatrix(const GLchar *variable, T value){

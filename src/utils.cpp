@@ -39,24 +39,20 @@ namespace Config{
     }
 }
 const char* load_file(const char* filename) {
-    // Open the file
     std::ifstream file(filename);
     if (!file.is_open()) {
         throw std::runtime_error("Could not open file: " + std::string(filename));
     }
 
-    // Load the entire content into a stringstream
     std::stringstream buffer;
     buffer << file.rdbuf();
     
-    // Convert the buffer to a string
     std::string fileContent = buffer.str();
 
-    // Allocate memory for const char*
-    char* cstr = new char[fileContent.size() + 1]; // +1 for the null terminator
-    std::strcpy(cstr, fileContent.c_str()); // Copy the string into the allocated memory
+    char* cstr = new char[fileContent.size() + 1]; 
+    std::strcpy(cstr, fileContent.c_str());
     
-    return cstr; // Return the pointer to the allocated memory
+    return cstr; 
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -128,12 +124,8 @@ void SphereUtils::generateBufferData(int lats, int longs, std::vector<GLfloat>& 
 
 
 void ScreenUtils::generateBufferData(std::vector<GLfloat>& vertex_b, std::vector<GLuint>& index_b) {
-    // Clear incoming vectors to avoid residual data
     vertex_b.clear();  
     index_b.clear();
-    
-    // Define the vertex data for the plane/quad
-    // along with texture coordinates
     GLfloat vertices_array[] = {
         -1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
          1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
@@ -141,7 +133,6 @@ void ScreenUtils::generateBufferData(std::vector<GLfloat>& vertex_b, std::vector
         -1.0f,  1.0f, 0.0f, 0.0f, 1.0f
     };
     
-    // Define the index data for the plane/quad
     GLuint indices_array[] = {
         0, 1, 2,  // First triangle
         0, 2, 3   // Second triangle

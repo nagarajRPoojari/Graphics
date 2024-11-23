@@ -7,12 +7,16 @@
 #include <string>
 #include <shader/shader.hpp>
 #include <utils/utils.hpp>
+#include <filesystem>
+#include <stdexcept>
+#include <regex>
 
 Shader::Shader(){
     const char* vertexFilename = "../assets/vertex.glsl";
-    const char* fragmentFilename = "../assets/fragment.glsl";
+    const char* fragmentFolder = "../assets/fragment";
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    std::string vertexShaderSrc = load_file("../assets/vertex.glsl");
+    std::string vertexShaderSrc = load_file(vertexFilename);
+
     const GLchar * vertexSrc = vertexShaderSrc.c_str();
     glShaderSource(vertexShader, 1, &vertexSrc, nullptr);
     glCompileShader(vertexShader);
@@ -27,7 +31,8 @@ Shader::Shader(){
 
 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    std::string fragmentShaderSrc = load_file("../assets/fragment.glsl");
+    std::string fragmentShaderSrc = load_shader(fragmentFolder);
+
     const GLchar * fragmentSrc = fragmentShaderSrc.c_str();
     glShaderSource(fragmentShader, 1, &fragmentSrc, nullptr);
     glCompileShader(fragmentShader);
@@ -65,4 +70,42 @@ void Shader::activate(){
 void Shader::deactivate(){
     glUseProgram(0);
     glDeleteProgram(ID);
+}
+
+
+std::string Shader::load_shader(const std::string& dir_path) {
+    std::string combined_content;
+    
+    try {
+        std::string header_path = dir_path + "/header.glsl";
+        std::string header_content = load_file(header_path.c_str());
+        
+        std::regex include_regex(R"(#include\s*<(.*)>)");
+        std::smatch match;
+        
+        std::vector<std::string> included_files;
+        std::istringstream header_stream(header_content);
+        std::string line;
+        
+        while (std::getline(header_stream, line)) {
+            if (std::regex_search(line, match, include_regex)) {
+                std::string included_file = match[1].str(); 
+                included_files.push_back(included_file);
+            }
+        }
+        for (const auto& file : included_files) {
+            std::string included_file_path = dir_path + "/" + file;
+            combined_content += load_file(included_file_path.c_str());
+        }
+    } catch (const std::filesystem::filesystem_error& e) {
+        std::cerr << "Filesystem error: " << e.what() << std::endl;
+        throw;
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        throw;
+    }
+    
+    std::cout << combined_content << std::endl;
+
+    return combined_content;
 }

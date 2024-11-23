@@ -13,5 +13,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui
 
-CXX_FLAGS = -g -std=c++14
+CXX_FLAGS = -g -std=c++17
 
