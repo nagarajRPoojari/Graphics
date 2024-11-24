@@ -14,11 +14,18 @@
 class Shape{
     public:
         glm::mat4 model;
+        glm::vec3 velocity;
+        glm::vec3 position;
+        float time;
         Shape();
 
         Shape* rotate(float angle, glm::vec3 axis);
         Shape* tarnslate(glm::vec3 position);     
         Shape* scale(glm::vec3 factors);  
-        glm::vec3 getPosition();        
+        glm::vec3 getPosition(float time);    
+        void updatePosition();  
+
+        virtual ~Shape() = default;
+          
 };
 #endif

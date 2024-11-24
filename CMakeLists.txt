@@ -39,6 +39,7 @@ set(SOURCES
     src/screen.cpp
     src/camera.cpp
     src/gui/gui.cpp
+    src/physics/collider.cpp
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_draw.cpp
     ${IMGUI_DIR}/imgui_widgets.cpp

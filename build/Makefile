@@ -513,6 +513,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/physics/collider.o: src/physics/collider.cpp.o
+.PHONY : src/physics/collider.o
+
+# target to build an object file
+src/physics/collider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/physics/collider.cpp.o
+.PHONY : src/physics/collider.cpp.o
+
+src/physics/collider.i: src/physics/collider.cpp.i
+.PHONY : src/physics/collider.i
+
+# target to preprocess a source file
+src/physics/collider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/physics/collider.cpp.i
+.PHONY : src/physics/collider.cpp.i
+
+src/physics/collider.s: src/physics/collider.cpp.s
+.PHONY : src/physics/collider.s
+
+# target to generate assembly for a file
+src/physics/collider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/physics/collider.cpp.s
+.PHONY : src/physics/collider.cpp.s
+
 src/screen.o: src/screen.cpp.o
 .PHONY : src/screen.o
 
@@ -810,6 +834,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/physics/collider.o"
+	@echo "... src/physics/collider.i"
+	@echo "... src/physics/collider.s"
 	@echo "... src/screen.o"
 	@echo "... src/screen.i"
 	@echo "... src/screen.s"

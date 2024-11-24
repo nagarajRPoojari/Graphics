@@ -22,7 +22,7 @@ Cuboid::Cuboid(
 }
     
 void Cuboid::updateBuffer(Shader sh){
-    glm::vec3 center = this->getPosition();
+    glm::vec3 center = this->getPosition(glfwGetTime());
     glm::vec3 size = this->getSize();
     sh.setUniform3f(this->format("center"),center[0], center[1], center[2]);
     sh.setUniform3f(this->format("size"),size[0], size[1], size[2]);

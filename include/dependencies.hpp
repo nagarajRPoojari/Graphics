@@ -30,3 +30,4 @@
 #include <shape/light.hpp>
 #include <texture/cubemap.hpp>
 #include <shape/cuboid.hpp>
+#include <physics/collider.hpp>

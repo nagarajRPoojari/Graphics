@@ -19,12 +19,15 @@ Plane::Plane(
 ){
     this->buffer_index = BUFFER_INDEX;
     BUFFER_INDEX++;
+    position = glm::vec3(0.0f);
     this-> normal = normal;
     this-> material = Material(color,df,sf,kr,kt,n);
 }
     
 void Plane::updateBuffer(Shader sh){
-    glm::vec3 center = this->getPosition();
+    //glm::vec3 center = this->getPosition(glfwGetTime());
+    glm::vec3 center = this->position;
+
     glm::vec3 size = this->getSize();
     sh.setUniform3f(this->format("center"),center[0], center[1], center[2]);
     sh.setUniform3f(this->format("size"),size[0], size[1], size[2]);

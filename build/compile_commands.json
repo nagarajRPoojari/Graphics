@@ -115,6 +115,12 @@
 },
 {
   "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/src/physics/collider.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/physics/collider.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/physics/collider.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/physics/collider.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
   "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/imgui/imgui.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui.cpp",
   "file": "/home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui.cpp",
   "output": "CMakeFiles/GladExample.dir/imgui/imgui.cpp.o"

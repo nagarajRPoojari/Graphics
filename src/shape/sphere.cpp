@@ -20,7 +20,8 @@ Sphere::Sphere(glm::vec4 color, float df, float sf, float kr, float kt, float n)
 }
     
 void Sphere::updateBuffer(Shader sh){
-    glm::vec3 center = this->getPosition();
+    glm::vec3 center = this->getPosition(glfwGetTime());
+    
     sh.setUniform3f(this->format("center"),center[0], center[1], center[2]);
     sh.setUniform1f(this->format("radius"),this->radius);
     sh.setUniform4f(this->format("mat.color"),material.color[0], material.color[1], material.color[2], material.color[3]);
