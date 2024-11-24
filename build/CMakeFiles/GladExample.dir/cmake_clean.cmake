@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/camera.cpp.o"
   "CMakeFiles/GladExample.dir/src/camera.cpp.o.d"
+  "CMakeFiles/GladExample.dir/src/cubemap.cpp.o"
+  "CMakeFiles/GladExample.dir/src/cubemap.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/gui/gui.cpp.o"
   "CMakeFiles/GladExample.dir/src/gui/gui.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/main.cpp.o"

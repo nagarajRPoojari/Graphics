@@ -5,7 +5,7 @@ in vec2 TexCoords;
 
 uniform vec3 iResolution;
 uniform float iTime;
-uniform sampler2D iChannel0;
+uniform samplerCube iChannel0;
 uniform sampler2D iChannel1; 
 
 uniform vec3 cameraPosition;
@@ -14,18 +14,18 @@ uniform vec3 cameraUp;
 
 
 #define PI 3.1415926535
-#define SHADOWS
 
 float FLOAT_MAX = 10e+10;
 float FLOAT_MIN = -10e+10;
 
 // Global Parameters
 vec4 ambientLight = vec4(1,1,1,1);
-float ambientStrength = 0.1;
+float ambientStrength = 0.0;
 const int R = 3;    // Num reflections
 const float delta = 10e-5;
-float shadowFactor = 0.1;
+float shadowFactor = 0.7;
 const int N = 2; 
+const int BOX_COUNT = 1; 
 const int LIGHT_COUNT = 1;   // Num spheres
 const int PLANE_COUNT = 1;   // Num spheres
 bool transform = true;

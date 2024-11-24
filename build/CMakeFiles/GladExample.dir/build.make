@@ -195,10 +195,24 @@ CMakeFiles/GladExample.dir/src/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GladExample.dir/src/texture.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nagaraj/Desktop/experiments/learn-glfw/src/texture.cpp -o CMakeFiles/GladExample.dir/src/texture.cpp.s
 
+CMakeFiles/GladExample.dir/src/cubemap.cpp.o: CMakeFiles/GladExample.dir/flags.make
+CMakeFiles/GladExample.dir/src/cubemap.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp
+CMakeFiles/GladExample.dir/src/cubemap.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GladExample.dir/src/cubemap.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/cubemap.cpp.o -MF CMakeFiles/GladExample.dir/src/cubemap.cpp.o.d -o CMakeFiles/GladExample.dir/src/cubemap.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp
+
+CMakeFiles/GladExample.dir/src/cubemap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GladExample.dir/src/cubemap.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp > CMakeFiles/GladExample.dir/src/cubemap.cpp.i
+
+CMakeFiles/GladExample.dir/src/cubemap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GladExample.dir/src/cubemap.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp -o CMakeFiles/GladExample.dir/src/cubemap.cpp.s
+
 CMakeFiles/GladExample.dir/src/shape/shape.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/shape/shape.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp
 CMakeFiles/GladExample.dir/src/shape/shape.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GladExample.dir/src/shape/shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GladExample.dir/src/shape/shape.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/shape.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/shape.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/shape.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp
 
 CMakeFiles/GladExample.dir/src/shape/shape.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/GladExample.dir/src/shape/shape.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/sphere.cpp
 CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/sphere.cpp
 
 CMakeFiles/GladExample.dir/src/shape/sphere.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/GladExample.dir/src/shape/sphere.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/shape/material.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/shape/material.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/material.cpp
 CMakeFiles/GladExample.dir/src/shape/material.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GladExample.dir/src/shape/material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GladExample.dir/src/shape/material.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/material.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/material.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/material.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/material.cpp
 
 CMakeFiles/GladExample.dir/src/shape/material.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/GladExample.dir/src/shape/material.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/shape/light.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/shape/light.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/light.cpp
 CMakeFiles/GladExample.dir/src/shape/light.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GladExample.dir/src/shape/light.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GladExample.dir/src/shape/light.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/light.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/light.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/light.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/light.cpp
 
 CMakeFiles/GladExample.dir/src/shape/light.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/GladExample.dir/src/shape/light.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp
 CMakeFiles/GladExample.dir/src/shape/plane.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GladExample.dir/src/shape/plane.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GladExample.dir/src/shape/plane.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -MF CMakeFiles/GladExample.dir/src/shape/plane.cpp.o.d -o CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp
 
 CMakeFiles/GladExample.dir/src/shape/plane.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/GladExample.dir/src/shape/plane.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/screen.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/screen.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp
 CMakeFiles/GladExample.dir/src/screen.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GladExample.dir/src/screen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GladExample.dir/src/screen.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/screen.cpp.o -MF CMakeFiles/GladExample.dir/src/screen.cpp.o.d -o CMakeFiles/GladExample.dir/src/screen.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp
 
 CMakeFiles/GladExample.dir/src/screen.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/GladExample.dir/src/screen.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/camera.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/camera.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp
 CMakeFiles/GladExample.dir/src/camera.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/GladExample.dir/src/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/GladExample.dir/src/camera.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/camera.cpp.o -MF CMakeFiles/GladExample.dir/src/camera.cpp.o.d -o CMakeFiles/GladExample.dir/src/camera.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp
 
 CMakeFiles/GladExample.dir/src/camera.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/GladExample.dir/src/camera.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/src/gui/gui.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/src/gui/gui.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/src/gui/gui.cpp
 CMakeFiles/GladExample.dir/src/gui/gui.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/GladExample.dir/src/gui/gui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/GladExample.dir/src/gui/gui.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/src/gui/gui.cpp.o -MF CMakeFiles/GladExample.dir/src/gui/gui.cpp.o.d -o CMakeFiles/GladExample.dir/src/gui/gui.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/gui/gui.cpp
 
 CMakeFiles/GladExample.dir/src/gui/gui.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/GladExample.dir/src/gui/gui.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/imgui.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/imgui.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui.cpp
 CMakeFiles/GladExample.dir/imgui/imgui.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/imgui.cpp.o -MF CMakeFiles/GladExample.dir/imgui/imgui.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/imgui.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui.cpp
 
 CMakeFiles/GladExample.dir/imgui/imgui.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/GladExample.dir/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_draw.cpp
 CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o -MF CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_draw.cpp
 
 CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/GladExample.dir/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_widgets.cpp
 CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o -MF CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_widgets.cpp
 
 CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/GladExample.dir/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_demo.cpp
 CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o -MF CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_demo.cpp
 
 CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/GladExample.dir/imgui/imgui_demo.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_tables.cpp
 CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o -MF CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/imgui_tables.cpp
 
 CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/GladExample.dir/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GladExample.dir/flags.make
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o: /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/GladExample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/GladExample.dir/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -416,6 +430,7 @@ GladExample_OBJECTS = \
 "CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shader.cpp.o" \
 "CMakeFiles/GladExample.dir/src/texture.cpp.o" \
+"CMakeFiles/GladExample.dir/src/cubemap.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shape/shape.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o" \
 "CMakeFiles/GladExample.dir/src/shape/material.cpp.o" \
@@ -444,6 +459,7 @@ GladExample: CMakeFiles/GladExample.dir/src/buffers/VAO.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shader.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/texture.cpp.o
+GladExample: CMakeFiles/GladExample.dir/src/cubemap.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shape/shape.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shape/sphere.cpp.o
 GladExample: CMakeFiles/GladExample.dir/src/shape/material.cpp.o
@@ -463,7 +479,7 @@ GladExample: CMakeFiles/GladExample.dir/build.make
 GladExample: /usr/lib/x86_64-linux-gnu/libGL.so
 GladExample: /usr/lib/x86_64-linux-gnu/libGLU.so
 GladExample: CMakeFiles/GladExample.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable GladExample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nagaraj/Desktop/experiments/learn-glfw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable GladExample"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GladExample.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

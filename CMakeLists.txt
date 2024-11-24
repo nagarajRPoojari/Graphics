@@ -29,6 +29,7 @@ set(SOURCES
     src/buffers/VBO.cpp 
     src/shader.cpp 
     src/texture.cpp 
+    src/cubemap.cpp
     src/shape/shape.cpp 
     src/shape/sphere.cpp 
     src/shape/material.cpp

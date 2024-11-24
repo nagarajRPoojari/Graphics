@@ -5,7 +5,7 @@ Gui::Gui(GLFWwindow* window){
     ImGui::CreateContext();
     ImGui::StyleColorsDark(); 
     ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init("#version 330");
+    ImGui_ImplOpenGL3_Init("#version 430");
 }
 
 void Gui::newFrame(){

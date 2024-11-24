@@ -55,6 +55,12 @@
 },
 {
   "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/src/cubemap.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/cubemap.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
   "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/src/shape/shape.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp",
   "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/shape.cpp",
   "output": "CMakeFiles/GladExample.dir/src/shape/shape.cpp.o"

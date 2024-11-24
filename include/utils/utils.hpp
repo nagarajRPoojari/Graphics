@@ -38,4 +38,10 @@ namespace CleanUp{
     }
 }
 
+
+namespace CubeMapUtils{
+    float* getVertices();
+    int* getIndices();
+}
+
 #endif 

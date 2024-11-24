@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VAO.cpp" "CMakeFiles/GladExample.dir/src/buffers/VAO.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/buffers/VAO.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/buffers/VBO.cpp" "CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/buffers/VBO.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/camera.cpp" "CMakeFiles/GladExample.dir/src/camera.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/camera.cpp.o.d"
+  "/home/nagaraj/Desktop/experiments/learn-glfw/src/cubemap.cpp" "CMakeFiles/GladExample.dir/src/cubemap.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/cubemap.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/gui/gui.cpp" "CMakeFiles/GladExample.dir/src/gui/gui.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/gui/gui.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/main.cpp" "CMakeFiles/GladExample.dir/src/main.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/main.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp" "CMakeFiles/GladExample.dir/src/screen.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/screen.cpp.o.d"

@@ -1,6 +1,6 @@
 #include<camera/camera.hpp>
 
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraPos = glm::vec3(0.0f, 1.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 bool firstMouse=false;
@@ -8,7 +8,6 @@ float lastX = 400;
 float lastY = 300;
 float yaw=-90.0f; 
 float pitch=0.0f;
-
 
 Camera::Camera(GLFWwindow* window, bool disableCamera){
     
@@ -68,7 +67,12 @@ int Camera::processFrame(){
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    
+    if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS){
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL); 
+    }
+    if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS){
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); 
+    }
     view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
     return 0;
 }

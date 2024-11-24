@@ -21,5 +21,5 @@ void Light::updateBuffer(Shader sh){
 
 const char* Light::format(std::string field){
     std::string i_str = std::to_string(this->buffer_index);
-    return std::string("u_lights[").append(i_str).append("]").append(field).c_str();
+    return std::string("u_lights[").append(i_str).append("].").append(field).c_str();
 }

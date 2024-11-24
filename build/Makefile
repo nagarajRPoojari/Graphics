@@ -441,6 +441,30 @@ src/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/camera.cpp.s
 .PHONY : src/camera.cpp.s
 
+src/cubemap.o: src/cubemap.cpp.o
+.PHONY : src/cubemap.o
+
+# target to build an object file
+src/cubemap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/cubemap.cpp.o
+.PHONY : src/cubemap.cpp.o
+
+src/cubemap.i: src/cubemap.cpp.i
+.PHONY : src/cubemap.i
+
+# target to preprocess a source file
+src/cubemap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/cubemap.cpp.i
+.PHONY : src/cubemap.cpp.i
+
+src/cubemap.s: src/cubemap.cpp.s
+.PHONY : src/cubemap.s
+
+# target to generate assembly for a file
+src/cubemap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/cubemap.cpp.s
+.PHONY : src/cubemap.cpp.s
+
 src/gui/gui.o: src/gui/gui.cpp.o
 .PHONY : src/gui/gui.o
 
@@ -753,6 +777,9 @@ help:
 	@echo "... src/camera.o"
 	@echo "... src/camera.i"
 	@echo "... src/camera.s"
+	@echo "... src/cubemap.o"
+	@echo "... src/cubemap.i"
+	@echo "... src/cubemap.s"
 	@echo "... src/gui/gui.o"
 	@echo "... src/gui/gui.i"
 	@echo "... src/gui/gui.s"

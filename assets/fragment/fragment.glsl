@@ -1,67 +1,113 @@
 
-mat3 Rotation(vec3 euler, bool deg){
+struct Cuboid{
+    vec3 size;
+    vec3 center;
+    mat3 rotation;  
+    Material mat;
+};
 
-    // Deg to Rad
-    if (deg)
-        euler *= PI / 180.0;
-
-    // Rotation around X - pitch
-    float c = cos(euler.x);
-    float s = sin(euler.x);
-    mat3 Rx = mat3(
-        vec3(1, 0, 0),
-        vec3(0, c, -s),
-        vec3(0, s, c)
-    );
-
-    // Rotation around Y - yaw
-    c = cos(euler.y);
-    s = sin(euler.y);
-    mat3 Ry = mat3(
-        vec3(c, 0, s),
-        vec3(0, 1, 0),
-        vec3(-s, 0, c)
-    );
-
-    // Rotation around Z - roll
-    c = cos(euler.z);
-    s = sin(euler.z);
-    mat3 Rz = mat3(
-        vec3(c, -s, 0),
-        vec3(s, c, 0),
-        vec3(0, 0, 1)
-    );
-    
-    return Rz*Ry*Rx;
-}
-
-// Global variables
 Ray[totalRays+1] reflectionRays;
 Ray[totalRays+1] refractionRays;
-Sphere spheres[N];
-Plane ground;
 Light light;
+Plane ground;
+Sphere[N] spheres;
+Cuboid[BOX_COUNT] cuboids;
 
 
-// Raycasting Functions definition
-Hit RayCastPlane(vec3 rayOrigin, vec3 rayDir, in Plane plane, float delta){
-    Hit hit = Hit(-1.0, vec3(0), vec3(0));
-    // Move hitpoint by delta to avoid 'acne'
+
+Hit RayCastPlane(vec3 rayOrigin, vec3 rayDir, in Plane plane, float delta) {
+    Hit hit;
+    hit.d = -1.0; 
+
     rayOrigin += delta * plane.normal;
- 
-    if (rayDir.y != 0.0){
-        hit.d = (plane.center.y - rayOrigin.y)/rayDir.y;
-        hit.point = rayOrigin + hit.d * rayDir;
-        hit.normal = plane.normal;
-        
-        // Chceck if hitpoint within plane
-        vec3 relPoint = abs(hit.point - plane.center);
-        if (relPoint.x > plane.size.x || relPoint.z > plane.size.z){
-            hit.d = -1.0;
+
+    float denominator = dot(rayDir, plane.normal);
+    
+    if (denominator != 0.0) {
+        float d = dot(plane.center - rayOrigin, plane.normal) / denominator;
+
+        if (d >= 0.0) { // Only consider hits in the direction of the ray
+            hit.d = d;
+            hit.point = rayOrigin + d * rayDir;
+
+            hit.normal = plane.normal;
+            if (denominator > 0.0) {
+                hit.normal = -plane.normal; // Flip the normal if the ray is coming from the opposite side
+            }
+
+            vec3 relPoint = abs(hit.point - plane.center);
+            if (plane.normal.y == 1.0) {
+                if (relPoint.x > plane.size.x * 0.5 || relPoint.z > plane.size.z * 0.5) {
+                    hit.d = -1.0; // Not within the bounds
+                }
+            } else {
+                if (relPoint.y > plane.size.x * 0.5 || relPoint.z > plane.size.z * 0.5) {
+                    hit.d = -1.0; // Not within the bounds
+                }
+            }
         }
     }
+
     return hit;
 }
+
+Hit RayCastCuboid(vec3 rayOrigin, vec3 rayDir, in Cuboid cuboid) {
+    Hit hit;
+    hit.d = -1.0;  
+    float tMin = -1e10; 
+    float tMax = 1e10; 
+
+    vec3 halfSize = cuboid.size * 0.5;
+
+    for (int i = 0; i < 3; ++i) {
+        float origin = rayOrigin[i];
+        float direction = rayDir[i];
+
+        if (direction != 0.0) {
+            float t1 = (cuboid.center[i] - halfSize[i] - origin) / direction;
+            float t2 = (cuboid.center[i] + halfSize[i] - origin) / direction;
+
+            if (t1 > t2) {
+                float temp = t1;
+                t1 = t2;
+                t2 = temp;
+            }
+
+            tMin = max(tMin, t1);
+            tMax = min(tMax, t2);
+
+            if (tMin > tMax) {
+                hit.d = -1.0;  // No intersection
+                return hit;
+            }
+        } else {
+            if (origin < cuboid.center[i] - halfSize[i] || origin > cuboid.center[i] + halfSize[i]) {
+                hit.d = -1.0;  // No intersection
+                return hit;
+            }
+        }
+    }
+
+    hit.d = tMin;
+    hit.point = rayOrigin + hit.d * rayDir;
+
+    if (abs(hit.point.x - (cuboid.center.x - halfSize.x)) < 1e-4) {
+        hit.normal = vec3(-1.0, 0.0, 0.0);  // Left face
+    } else if (abs(hit.point.x - (cuboid.center.x + halfSize.x)) < 1e-4) {
+        hit.normal = vec3(1.0, 0.0, 0.0);   // Right face
+    } else if (abs(hit.point.y - (cuboid.center.y - halfSize.y)) < 1e-4) {
+        hit.normal = vec3(0.0, -1.0, 0.0);  // Bottom face
+    } else if (abs(hit.point.y - (cuboid.center.y + halfSize.y)) < 1e-4) {
+        hit.normal = vec3(0.0, 1.0, 0.0);   // Top face
+    } else if (abs(hit.point.z - (cuboid.center.z - halfSize.z)) < 1e-4) {
+        hit.normal = vec3(0.0, 0.0, -1.0);  // Near face
+    } else if (abs(hit.point.z - (cuboid.center.z + halfSize.z)) < 1e-4) {
+        hit.normal = vec3(0.0, 0.0, 1.0);   // Far face
+    }
+
+    return hit;
+}
+
 
 Hit RayCastSphere(vec3 rayOrigin, vec3 rayDir, in Sphere sphere){
     Hit hit = Hit(-1.0, vec3(0), vec3(0));
@@ -124,6 +170,11 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
     
     // Plane distance calculations
     Hit hitGround = RayCastPlane(ray.origin, ray.dir, ground, 0.0);
+    Hit[BOX_COUNT] hitBox;
+
+    for( int i=0;i<BOX_COUNT;i++){
+        hitBox[i]= RayCastCuboid(ray.origin, ray.dir, cuboids[i]);
+    }
     // Sphere distance calculations
     Hit[N] hitSphere;
     for (int i=0; i<N; i++){
@@ -137,11 +188,20 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
         hit = hitGround;
         // sample ground texture
         vec2 groundTexScale = vec2(0.5);
-        //ground.mat.color = texture(iChannel1, hitGround.point.xz*groundTexScale);
-        //ground.mat.color = ground.mat;
+        ground.mat.color = texture(iChannel1, hitGround.point.xz*groundTexScale);
         hitMat = ground.mat;
         col = GetLighting(ground.mat, hitGround.normal, ray.dir, light);
     }
+
+    for(int i=0;i< BOX_COUNT;i++){
+        if(hitBox[i].d < 0.0) hitBox[i].d = FLOAT_MAX;
+        if(hitBox[i].d < hit.d){
+            hit = hitBox[i];
+            hitMat = cuboids[i].mat;
+            col = GetLighting(cuboids[i].mat, hitBox[i].normal, ray.dir, light);
+        }
+    }
+
     // Minimum distances for all spheres
     for (int i=0; i<N; i++){
         if (hitSphere[i].d < 0.0) hitSphere[i].d = FLOAT_MAX;
@@ -152,15 +212,11 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
         }
     }
 
-    // If no object hit then exit
     if (hit.d == FLOAT_MAX){
-        //col = texture(iChannel0, reflect(ray.dir, hit.normal));
-        col = vec4(0.1f);
-        //col = vec4(spheres[0].radius, spheres[0].radius, spheres[0].radius, 1.0f);
+        col = texture(iChannel0, reflect(ray.dir, hit.normal));
         return col;
     }
 
-    // Shadow of ground plane calculation
 #ifdef SHADOWS
     if (iter == R-1){
         Hit hitShadow;
@@ -170,7 +226,15 @@ vec4 RayTraceCore(inout Ray ray, inout Material hitMat, inout Hit hit, in int it
             col = vec4(0) * shadowFactor * exp(-1.0/hitShadow.d);
             minShadowDist = hitShadow.d;
         }
-        // Shadows of all spheres calculation
+
+        for(int i=0;i< BOX_COUNT;i++){
+            hitShadow = RayCastCuboid(hit.point, -light.dir, cuboids[i]);
+            if (hitShadow.d >= 0.0 && hitShadow.d < minShadowDist){
+                col = hitMat.color * shadowFactor * exp(-1.0/hitShadow.d);
+                minShadowDist = hitShadow.d;
+            }
+        }
+
         for (int i=0; i<N; i++){
             hitShadow = RayCastSphere(hit.point + delta*hit.normal, -light.dir, spheres[i]);
             if (hitShadow.d >= 0.0 && hitShadow.d < minShadowDist){
@@ -333,10 +397,35 @@ void main() {
     ground = u_planes[0];
     light = u_lights[0];
     spheres = u_spheres;
-    //light.dir = vec3(sin(iTime*0.7), -1, cos(iTime*0.7));
     light.dir = vec3(-0.4, -1.0, -1);
     //light.dir = vec3(0.6, -0.5, 1);
-    light.mag = 0.4;
+    light.mag = 0.0;
     light.color = vec4(1,1,1,1);
+
+
+    //ground.normal = vec3(1,0,0);
+    ground.mat.color = vec4(0.1f);
+    //light.dir = normalize(light.dir);
+    //light.ray = light.dir * light.mag;
+    // Example values for the material properties
+Material mat;
+mat.color = vec4(1.0, 0.0, 1.0, 1.0);  // Red color (RGBA)
+mat.kd = 10.8f;   // Diffuse reflection factor
+mat.ks = 16.5f;   // Specular reflection factor
+mat.kr = 0.5f;   // Reflectivity factor
+mat.kt = 0.0f;   // Transmitivity factor
+mat.n = 2.0f;    // Refractive index (glass-like material)
+
+// Identity rotation matrix (no rotation)
+mat3 rotation = mat3(1.0, 0.0, 0.0,  // First column (X axis)
+                     0.0, 1.0, 0.0,  // Second column (Y axis)
+                     0.0, 0.0, 1.0); // Third column (Z axis)
+
+// Initialize the cuboid
+cuboids[0].size = vec3(2.0, 1.5, 7.0);  // Half-extents (width=4.0, height=3.0, depth=2.0)
+cuboids[0].center = vec3(0.0, 2.0, 0.0);  // Center of the cuboid at the origin
+cuboids[0].rotation = rotation;  // No rotation (identity matrix)
+cuboids[0].mat = ground.mat;  // Set the material properties
+
     mainImage(fragColor, TexCoords * iResolution.xy);
 }

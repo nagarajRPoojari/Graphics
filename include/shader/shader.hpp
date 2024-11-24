@@ -37,6 +37,10 @@ class Shader{
         void setUniform3f(std::string variable, T  a, T b, T c){
             glUniform3f(glGetUniformLocation(ID, variable.c_str()),a,b,c);
         }
+        template <typename T>
+        void setUniform1i(std::string variable, T  value){
+            glUniform1i(glGetUniformLocation(ID, variable.c_str()),value);
+        }
 };
 
 

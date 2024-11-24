@@ -25,7 +25,7 @@ Texture::Texture(const char* path){
 }
 
 void Texture::activate(){
-    glActiveTexture(GL_TEXTURE0);
+    glActiveTexture(GL_TEXTURE1);
 }
 
 void Texture::bind(){

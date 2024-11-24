@@ -28,3 +28,4 @@
 #include <screen/screen.hpp>
 #include <gui/gui.hpp>
 #include <shape/light.hpp>
+#include <texture/cubemap.hpp>

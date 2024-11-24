@@ -104,8 +104,5 @@ std::string Shader::load_shader(const std::string& dir_path) {
         std::cerr << "Error: " << e.what() << std::endl;
         throw;
     }
-    
-    std::cout << combined_content << std::endl;
-
     return combined_content;
 }
