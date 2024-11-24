@@ -35,6 +35,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GladExample.dir/src/screen.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/shader.cpp.o"
   "CMakeFiles/GladExample.dir/src/shader.cpp.o.d"
+  "CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o"
+  "CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/shape/light.cpp.o"
   "CMakeFiles/GladExample.dir/src/shape/light.cpp.o.d"
   "CMakeFiles/GladExample.dir/src/shape/material.cpp.o"

@@ -561,6 +561,30 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
+src/shape/cuboid.o: src/shape/cuboid.cpp.o
+.PHONY : src/shape/cuboid.o
+
+# target to build an object file
+src/shape/cuboid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o
+.PHONY : src/shape/cuboid.cpp.o
+
+src/shape/cuboid.i: src/shape/cuboid.cpp.i
+.PHONY : src/shape/cuboid.i
+
+# target to preprocess a source file
+src/shape/cuboid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.i
+.PHONY : src/shape/cuboid.cpp.i
+
+src/shape/cuboid.s: src/shape/cuboid.cpp.s
+.PHONY : src/shape/cuboid.s
+
+# target to generate assembly for a file
+src/shape/cuboid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GladExample.dir/build.make CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.s
+.PHONY : src/shape/cuboid.cpp.s
+
 src/shape/light.o: src/shape/light.cpp.o
 .PHONY : src/shape/light.o
 
@@ -792,6 +816,9 @@ help:
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
+	@echo "... src/shape/cuboid.o"
+	@echo "... src/shape/cuboid.i"
+	@echo "... src/shape/cuboid.s"
 	@echo "... src/shape/light.o"
 	@echo "... src/shape/light.i"
 	@echo "... src/shape/light.s"

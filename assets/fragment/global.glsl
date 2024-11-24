@@ -77,7 +77,18 @@ struct Hit{
     vec3 normal;
 };
 
+
+struct Cuboid{
+    vec3 size;
+    vec3 center;
+    mat3 rotation;  
+    Material mat;
+};
+
 uniform Sphere u_spheres[N];
 uniform Light u_lights[LIGHT_COUNT];
 uniform Plane u_planes[PLANE_COUNT];
+uniform Cuboid u_cuboids[BOX_COUNT];
 
+
+uniform sampler2D previousFrameTexture;

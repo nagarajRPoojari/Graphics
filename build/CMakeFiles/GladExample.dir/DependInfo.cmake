@@ -26,6 +26,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/main.cpp" "CMakeFiles/GladExample.dir/src/main.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/main.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/screen.cpp" "CMakeFiles/GladExample.dir/src/screen.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/screen.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/shader.cpp" "CMakeFiles/GladExample.dir/src/shader.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/shader.cpp.o.d"
+  "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/cuboid.cpp" "CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/light.cpp" "CMakeFiles/GladExample.dir/src/shape/light.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/shape/light.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/material.cpp" "CMakeFiles/GladExample.dir/src/shape/material.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/shape/material.cpp.o.d"
   "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp" "CMakeFiles/GladExample.dir/src/shape/plane.cpp.o" "gcc" "CMakeFiles/GladExample.dir/src/shape/plane.cpp.o.d"

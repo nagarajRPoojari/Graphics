@@ -34,6 +34,7 @@ set(SOURCES
     src/shape/sphere.cpp 
     src/shape/material.cpp
     src/shape/light.cpp
+    src/shape/cuboid.cpp
     src/shape/plane.cpp
     src/screen.cpp
     src/camera.cpp

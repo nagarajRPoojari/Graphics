@@ -447,4 +447,5 @@ CMakeFiles/GladExample.dir/src/main.cpp.o: \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/screen/screen.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/gui/gui.hpp \
  /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/light.hpp \
- /home/nagaraj/Desktop/experiments/learn-glfw/include/texture/cubemap.hpp
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/texture/cubemap.hpp \
+ /home/nagaraj/Desktop/experiments/learn-glfw/include/shape/cuboid.hpp

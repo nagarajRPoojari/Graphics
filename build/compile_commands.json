@@ -85,6 +85,12 @@
 },
 {
   "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
+  "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/cuboid.cpp",
+  "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/cuboid.cpp",
+  "output": "CMakeFiles/GladExample.dir/src/shape/cuboid.cpp.o"
+},
+{
+  "directory": "/home/nagaraj/Desktop/experiments/learn-glfw/build",
   "command": "/usr/bin/g++  -I/home/nagaraj/Desktop/experiments/learn-glfw/include -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui/backends -I/home/nagaraj/Desktop/experiments/learn-glfw/imgui -g -std=c++17 -o CMakeFiles/GladExample.dir/src/shape/plane.cpp.o -c /home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp",
   "file": "/home/nagaraj/Desktop/experiments/learn-glfw/src/shape/plane.cpp",
   "output": "CMakeFiles/GladExample.dir/src/shape/plane.cpp.o"

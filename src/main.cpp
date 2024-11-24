@@ -7,9 +7,9 @@ int main() {
     GLFWwindow *window = initWindow();
 
     Camera camera(window,false);
-    Screen back;
 
     Gui gui(window);
+    
 
     Shader sh;
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), 
@@ -23,10 +23,16 @@ int main() {
     sphere2.tarnslate(glm::vec3(-1.0f,1.0f,-1.0f));
     Light light = Light(glm::vec4(1),glm::vec3(-0.4, -1.0, -1), 0.0f);
 
+    Cuboid box(glm::vec4(0.3), 1.0, 16.0, 0.2, 0.0, 1.0);
+    box.scale(glm::vec3(2,2,2));
+
+
+
     sh.activate();
 
 
     
+    Screen back;
 
     //Texture tex("../resource/pz.png");
     //tex.activate();
@@ -35,6 +41,7 @@ int main() {
     CubeMap sky;
 
     while (!glfwWindowShouldClose(window)) {
+        //glBindFramebuffer(GL_FRAMEBUFFER, fbo);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         if(camera.processFrame()) break;
@@ -43,22 +50,11 @@ int main() {
         glUniform3f(glGetUniformLocation(sh.ID, "iResolution"), (float)Config::WINDOW_WIDTH, (float)Config::WINDOW_HEIGHT, 0.0f);
        
 
-        //gui.newFrame();
-        //ImGui::Begin("Hello, world!");
-        //static float color[3] = {0,0,0};
-        //ImGui::ColorEdit3("RGB Color", color);
-        //plane.material.color.r = color[0];
-        //plane.material.color.g = color[1];
-        //plane.material.color.b = color[2];
-
-        //std::cout << plane.material.color.r <<  " " << plane.material.color.g << " " << plane.material.color.b << std::endl;
- 
-        //ImGui::End();
-
         light.updateBuffer(sh);
         sphere1.updateBuffer(sh);
         sphere2.updateBuffer(sh);
         plane.updateBuffer(sh);
+        box.updateBuffer(sh);
 
         sh.setUniform3fv("cameraPosition", cameraPos);
         sh.setUniform3fv("cameraViewDir", cameraFront);
@@ -67,6 +63,7 @@ int main() {
         sky.bind();
         sh.setUniform1i("iChannerl0",0);
         
+
         back.draw(sh);
         glfwSwapBuffers(window);
         glfwPollEvents();

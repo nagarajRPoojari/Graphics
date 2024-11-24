@@ -1,10 +1,4 @@
 
-struct Cuboid{
-    vec3 size;
-    vec3 center;
-    mat3 rotation;  
-    Material mat;
-};
 
 Ray[totalRays+1] reflectionRays;
 Ray[totalRays+1] refractionRays;
@@ -397,35 +391,11 @@ void main() {
     ground = u_planes[0];
     light = u_lights[0];
     spheres = u_spheres;
+    cuboids = u_cuboids;
     light.dir = vec3(-0.4, -1.0, -1);
     //light.dir = vec3(0.6, -0.5, 1);
     light.mag = 0.0;
     light.color = vec4(1,1,1,1);
-
-
-    //ground.normal = vec3(1,0,0);
-    ground.mat.color = vec4(0.1f);
-    //light.dir = normalize(light.dir);
-    //light.ray = light.dir * light.mag;
-    // Example values for the material properties
-Material mat;
-mat.color = vec4(1.0, 0.0, 1.0, 1.0);  // Red color (RGBA)
-mat.kd = 10.8f;   // Diffuse reflection factor
-mat.ks = 16.5f;   // Specular reflection factor
-mat.kr = 0.5f;   // Reflectivity factor
-mat.kt = 0.0f;   // Transmitivity factor
-mat.n = 2.0f;    // Refractive index (glass-like material)
-
-// Identity rotation matrix (no rotation)
-mat3 rotation = mat3(1.0, 0.0, 0.0,  // First column (X axis)
-                     0.0, 1.0, 0.0,  // Second column (Y axis)
-                     0.0, 0.0, 1.0); // Third column (Z axis)
-
-// Initialize the cuboid
-cuboids[0].size = vec3(2.0, 1.5, 7.0);  // Half-extents (width=4.0, height=3.0, depth=2.0)
-cuboids[0].center = vec3(0.0, 2.0, 0.0);  // Center of the cuboid at the origin
-cuboids[0].rotation = rotation;  // No rotation (identity matrix)
-cuboids[0].mat = ground.mat;  // Set the material properties
 
     mainImage(fragColor, TexCoords * iResolution.xy);
 }
